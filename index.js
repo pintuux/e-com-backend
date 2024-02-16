@@ -7,7 +7,12 @@ const multer = require('multer');
 const path = require('path');
 const cors = require('cors');
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin:["http://13.60.35.148:4000"],
+    method:get,POST,PUT,DELETE,
+    credential:true
+
+}));
 // Database connection with mongodb
 mongoose.connect(process.env.DB_URL);
 
