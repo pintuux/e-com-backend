@@ -9,7 +9,7 @@ const cors = require('cors');
 app.use(express.json());
 app.use(cors());
 // Database connection with mongodb
-mongoose.connect('mongodb+srv://pintu20081999:Pintu%4028@cluster0.hbefnko.mongodb.net/ecommerce');
+mongoose.connect(process.env.DB_URL);
 
 // API Creation
 app.get('/',(req,res)=>{
