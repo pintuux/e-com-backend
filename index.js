@@ -9,8 +9,8 @@ const cors = require('cors');
 app.use(express.json());
 app.use(cors({
     origin:["http://13.60.35.148:4000"],
-    method:get,POST,PUT,DELETE,
-    credential:true
+    method:"GET,POST,PUT,DELETE",
+    credentials:true
 
 }));
 // Database connection with mongodb
