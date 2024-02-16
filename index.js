@@ -30,7 +30,7 @@ app.use('/images',express.static('upload/images'))
 app.post("/upload",upload.single('product'),(req,res)=>{
     res.json({
         success:1,
-        imageUrl:`http://localhost:${port}/images/${req.file.filename}`
+        imageUrl:`http://13.60.35.148:${process.env.PORT}/images/${req.file.filename}`
     })
 })
 //Schema for creating products
