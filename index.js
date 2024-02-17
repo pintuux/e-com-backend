@@ -16,8 +16,15 @@ mongoose.connect(process.env.DB_URL);
 // ssl scertificate adding
 
 app.get('/.well-known/pki-validation/BDB2110762CAB43918DD30D635E8E24C.txt',(req,res)=>{
-    console.log('hello')
-    res.sendFile("C:\Users\Think\Desktop\full_Stack_Courses\Projects\E-com_web\backend\BDB2110762CAB43918DD30D635E8E24C.txt");
+    const filePath = 'C:\Users\Think\Desktop\full_Stack_Courses\Projects\E-com_web\backend\BDB2110762CAB43918DD30D635E8E24C.txt'
+    res.sendFile(path.resolve(filePath), (err) => {
+        if (err) {
+            // If there's an error sending the file, send an error response
+            res.status(err.status).end();
+        } else {
+            console.log('File sent successfully');
+        }
+    });
 })
 
 // API Creation
