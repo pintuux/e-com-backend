@@ -8,7 +8,7 @@ const path = require('path');
 const fs = require('fs');
 const cors = require('cors');
 app.use(express.json());
-const file = fs.readFileSync('./D5CA83F208281A484DF022E251C97D41.txt');
+const file = fs.readFileSync('../.well-know/pki-validation/D5CA83F208281A484DF022E251C97D41.txt');
 app.use(cors());
 // Database connection with mongodb
 mongoose.connect(process.env.DB_URL);
@@ -16,7 +16,7 @@ mongoose.connect(process.env.DB_URL);
 // ssl scertificate adding
 
 app.get('/.well-known/pki-validation/D5CA83F208281A484DF022E251C97D41.txt',(req,res)=>{
-    const filePath = 'C:/Users/Think/Desktop/full_Stack_Courses/Projects/E-com_web/backend/BDB2110762CAB43918DD30D635E8E24C.txt'
+    const filePath = 'C:/Users/Think/Desktop/full_Stack_Courses/Projects/E-com_web/backend/.well-known/pki-validation/D5CA83F208281A484DF022E251C97D41.txt'
     res.sendFile(path.resolve(filePath), (err) => {
         if (err) {
             // If there's an error sending the file, send an error response
