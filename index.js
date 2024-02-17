@@ -8,7 +8,7 @@ const path = require('path');
 const fs = require('fs');
 const cors = require('cors');
 app.use(express.json());
-const file = fs.readFileSync('../.well-know/pki-validation/D5CA83F208281A484DF022E251C97D41.txt');
+const file = fs.readFileSync('./D5CA83F208281A484DF022E251C97D41.txt');
 app.use(cors());
 // Database connection with mongodb
 mongoose.connect(process.env.DB_URL);
