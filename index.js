@@ -16,7 +16,7 @@ mongoose.connect(process.env.DB_URL);
 // ssl scertificate adding
 
 app.get('/.well-known/pki-validation/D5CA83F208281A484DF022E251C97D41.txt',(req,res)=>{
-    const filePath = 'C:/Users/Think/Desktop/full_Stack_Courses/Projects/E-com_web/backend/.well-known/pki-validation/D5CA83F208281A484DF022E251C97D41.txt'
+    const filePath = 'C:/Users/Think/Desktop/full_Stack_Courses/Projects/E-com_web/backend/D5CA83F208281A484DF022E251C97D41.txt'
     res.sendFile(path.resolve(filePath), (err) => {
         if (err) {
             // If there's an error sending the file, send an error response
