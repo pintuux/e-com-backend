@@ -9,19 +9,14 @@ const fs = require('fs');
 const cors = require('cors');
 app.use(express.json());
 const file = fs.readFileSync('./BDB2110762CAB43918DD30D635E8E24C.txt');
-app.use(cors({
-    origin:["http://13.60.35.148:4000"],
-    method:"GET,POST,PUT,DELETE",
-    credentials:true
-
-}));
+app.use(cors());
 // Database connection with mongodb
 mongoose.connect(process.env.DB_URL);
 
 // ssl scertificate adding
 
 app.get('/.well-known/pki-validation/BDB2110762CAB43918DD30D635E8E24C.txt',(req,res)=>{
-    res.sendFile('./BDB2110762CAB43918DD30D635E8E24C.txt');
+    res.sendFile(file);
 })
 
 // API Creation
