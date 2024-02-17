@@ -8,7 +8,7 @@ const path = require('path');
 const fs = require('fs');
 const cors = require('cors');
 app.use(express.json());
-const file = fs.readFileSync('./70BBA87480E0FFA3BF01B1D21D9BBB0F.txt');
+const file = fs.readFileSync('./BDB2110762CAB43918DD30D635E8E24C.txt');
 app.use(cors({
     origin:["http://13.60.35.148:4000"],
     method:"GET,POST,PUT,DELETE",
@@ -20,8 +20,8 @@ mongoose.connect(process.env.DB_URL);
 
 // ssl scertificate adding
 
-app.use('/.well-known/pki-validation//70BBA87480E0FFA3BF01B1D21D9BBB0F.txt',(req,res)=>{
-    res.sendFile('C:/Users/Think/Desktop/full_Stack_Courses/Projects/E-com_web/backend/70BBA87480E0FFA3BF01B1D21D9BBB0F.txt');
+app.use('/.well-known/pki-validation/BDB2110762CAB43918DD30D635E8E24C.txt',(req,res)=>{
+    res.sendFile('C:/Users/Think/Desktop/full_Stack_Courses/Projects/E-com_web/backend/BDB2110762CAB43918DD30D635E8E24C.txt');
 })
 
 // API Creation
