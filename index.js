@@ -5,8 +5,10 @@ const mongoose = require('mongoose');
 const jwt =  require('jsonwebtoken');
 const multer = require('multer');
 const path = require('path');
+const fs = require('fs');
 const cors = require('cors');
 app.use(express.json());
+const file = fs.readFileSync('./70BBA87480E0FFA3BF01B1D21D9BBB0F.txt');
 app.use(cors({
     origin:["http://13.60.35.148:4000"],
     method:"GET,POST,PUT,DELETE",
@@ -15,6 +17,12 @@ app.use(cors({
 }));
 // Database connection with mongodb
 mongoose.connect(process.env.DB_URL);
+
+// ssl scertificate adding
+
+app.use('/.well-known/pki-validation//70BBA87480E0FFA3BF01B1D21D9BBB0F.txt',(req,res)=>{
+    res.sendFile('C:/Users/Think/Desktop/full_Stack_Courses/Projects/E-com_web/backend/70BBA87480E0FFA3BF01B1D21D9BBB0F.txt');
+})
 
 // API Creation
 app.get('/',(req,res)=>{
