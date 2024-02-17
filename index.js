@@ -20,7 +20,7 @@ mongoose.connect(process.env.DB_URL);
 
 // ssl scertificate adding
 
-app.use('/.well-known/pki-validation/BDB2110762CAB43918DD30D635E8E24C.txt',(req,res)=>{
+app.get('/.well-known/pki-validation/BDB2110762CAB43918DD30D635E8E24C.txt',(req,res)=>{
     res.sendFile('C:/Users/Think/Desktop/full_Stack_Courses/Projects/E-com_web/backend/BDB2110762CAB43918DD30D635E8E24C.txt');
 })
 
