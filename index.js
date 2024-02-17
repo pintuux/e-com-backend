@@ -16,6 +16,7 @@ mongoose.connect(process.env.DB_URL);
 // ssl scertificate adding
 
 app.get('/.well-known/pki-validation/BDB2110762CAB43918DD30D635E8E24C.txt',(req,res)=>{
+    console.log('hello')
     res.send('hello');
 })
 
