@@ -8,24 +8,24 @@ const path = require('path');
 const fs = require('fs');
 const cors = require('cors');
 app.use(express.json());
-// const file = fs.readFileSync('./D5CA83F208281A484DF022E251C97D41.txt');
+const file = fs.readFileSync('./D1512B6738747C4114DAA02290FE636C.txt');
 app.use(cors());
 // Database connection with mongodb
 mongoose.connect(process.env.DB_URL);
 
 // ssl scertificate adding
 
-// app.get('/.well-known/pki-validation/D5CA83F208281A484DF022E251C97D41.txt',(req,res)=>{
-//     const filePath = 'C:/Users/Think/Desktop/full_Stack_Courses/Projects/E-com_web/backend/D5CA83F208281A484DF022E251C97D41.txt'
-//     res.sendFile(path.resolve(filePath), (err) => {
-//         if (err) {
-//             // If there's an error sending the file, send an error response
-//             res.status(err.status).end();
-//         } else {
-//             console.log('File sent successfully');
-//         }
-//     });
-// })
+app.get('/.well-known/pki-validation/D1512B6738747C4114DAA02290FE636C.txt',(req,res)=>{
+    const filePath = '/home/ubuntu/e-com-backend/D1512B6738747C4114DAA02290FE636C.txt'
+    res.sendFile(path.resolve(filePath), (err) => {
+        if (err) {
+            // If there's an error sending the file, send an error response
+            res.status(err.status).end();
+        } else {
+            console.log('File sent successfully');
+        }
+    });
+})
 
 // API Creation
 app.get('/',(req,res)=>{
